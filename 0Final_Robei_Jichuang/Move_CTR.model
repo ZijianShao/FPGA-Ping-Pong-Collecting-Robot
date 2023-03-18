@@ -1,0 +1,92 @@
+<!DOCTYPE Robei>
+<Module X="0" Class="module" Comment="" Y="0" Parameters="" Include="" File="Current/Move_CTR.model" Height="600" Parent="0" Name="Move_CTR" Type="module" Code="&#xa;&#xa;" Width="900" Color="#d3d3d3">
+ <Module X="810.098" Class="PWM" Comment="" Y="35" Parameters="" Include="" File="Current/PWM.model" Height="55" Parent="Move_CTR" Name="PWM1" Type="model" Code="parameter Freq_CLK = 50_000_000;&#xa;reg [31:0]cnt;&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;Freq_CLK)&#xa;&#x9;&#x9;cnt &lt;= cnt+1'b1;&#xa;&#x9;else&#xa;&#x9;&#x9;cnt &lt;= 32'b0;&#xa;end&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;=Freq_CLK*Duty/100)&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b0;&#xa;&#x9;else&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b1;&#xa;end&#xa;&#xa;" Width="50" Color="#d3d3d3">
+  <Port X="-0.4" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.0545455" Function="" Height="20" Inout="input" Parent="PWM1" Name="CLK" Width="20" Color="#faebd7"/>
+  <Port X="-0.4" Datatype="wire" Datasize="8" Connect="" Side="left" Y="0.272727" Function="" Height="20" Inout="input" Parent="PWM1" Name="duty " Width="20" Color="#00ffff"/>
+  <Port X="0.6" Datatype="reg" Datasize="1" Connect="" Side="right" Y="0.145455" Function="" Height="20" Inout="output" Parent="PWM1" Name="PWMOUT" Width="20" Color="#f0ffff"/>
+ </Module>
+ <Module X="790.129" Class="PWM" Comment="" Y="102.988" Parameters="" Include="" File="Current/PWM.model" Height="50" Parent="Move_CTR" Name="PWM2" Type="model" Code="parameter Freq_CLK = 50_000_000;&#xa;reg [31:0]cnt;&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;Freq_CLK)&#xa;&#x9;&#x9;cnt &lt;= cnt+1'b1;&#xa;&#x9;else&#xa;&#x9;&#x9;cnt &lt;= 32'b0;&#xa;end&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;=Freq_CLK*Duty/100)&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b0;&#xa;&#x9;else&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b1;&#xa;end&#xa;&#xa;" Width="50" Color="#d3d3d3">
+  <Port X="-0.4" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.04" Function="" Height="20" Inout="input" Parent="PWM2" Name="CLK" Width="20" Color="#faebd7"/>
+  <Port X="-0.4" Datatype="wire" Datasize="8" Connect="" Side="left" Y="0.28" Function="" Height="20" Inout="input" Parent="PWM2" Name="duty " Width="20" Color="#00ffff"/>
+  <Port X="0.6" Datatype="reg" Datasize="1" Connect="" Side="right" Y="0.12" Function="" Height="20" Inout="output" Parent="PWM2" Name="PWMOUT" Width="20" Color="#f0ffff"/>
+ </Module>
+ <Module X="781.051" Class="PWM" Comment="" Y="157.359" Parameters="" Include="" File="Current/PWM.model" Height="52" Parent="Move_CTR" Name="PWM3" Type="model" Code="parameter Freq_CLK = 50_000_000;&#xa;reg [31:0]cnt;&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;Freq_CLK)&#xa;&#x9;&#x9;cnt &lt;= cnt+1'b1;&#xa;&#x9;else&#xa;&#x9;&#x9;cnt &lt;= 32'b0;&#xa;end&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;=Freq_CLK*Duty/100)&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b0;&#xa;&#x9;else&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b1;&#xa;end&#xa;&#xa;" Width="50" Color="#d3d3d3">
+  <Port X="-0.4" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.0384615" Function="" Height="20" Inout="input" Parent="PWM3" Name="CLK" Width="20" Color="#faebd7"/>
+  <Port X="-0.4" Datatype="wire" Datasize="8" Connect="" Side="left" Y="0.288462" Function="" Height="20" Inout="input" Parent="PWM3" Name="duty " Width="20" Color="#00ffff"/>
+  <Port X="0.6" Datatype="reg" Datasize="1" Connect="" Side="right" Y="0.115385" Function="" Height="20" Inout="output" Parent="PWM3" Name="PWMOUT" Width="20" Color="#f0ffff"/>
+ </Module>
+ <Module X="769.697" Class="PWM" Comment="" Y="227.514" Parameters="" Include="" File="Current/PWM.model" Height="66" Parent="Move_CTR" Name="PWM4" Type="model" Code="parameter Freq_CLK = 50_000_000;&#xa;reg [31:0]cnt;&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;Freq_CLK)&#xa;&#x9;&#x9;cnt &lt;= cnt+1'b1;&#xa;&#x9;else&#xa;&#x9;&#x9;cnt &lt;= 32'b0;&#xa;end&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;=Freq_CLK*Duty/100)&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b0;&#xa;&#x9;else&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b1;&#xa;end&#xa;&#xa;" Width="60" Color="#d3d3d3">
+  <Port X="-0.333333" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.0909091" Function="" Height="20" Inout="input" Parent="PWM4" Name="CLK" Width="20" Color="#faebd7"/>
+  <Port X="-0.333333" Datatype="wire" Datasize="8" Connect="" Side="left" Y="0.318182" Function="" Height="20" Inout="input" Parent="PWM4" Name="duty " Width="20" Color="#00ffff"/>
+  <Port X="0.666667" Datatype="reg" Datasize="1" Connect="" Side="right" Y="0.166667" Function="" Height="20" Inout="output" Parent="PWM4" Name="PWMOUT" Width="20" Color="#f0ffff"/>
+ </Module>
+ <Module X="773.828" Class="PWM" Comment="" Y="296.87" Parameters="" Include="" File="Current/PWM.model" Height="58" Parent="Move_CTR" Name="PWM5" Type="model" Code="parameter Freq_CLK = 50_000_000;&#xa;reg [31:0]cnt;&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;Freq_CLK)&#xa;&#x9;&#x9;cnt &lt;= cnt+1'b1;&#xa;&#x9;else&#xa;&#x9;&#x9;cnt &lt;= 32'b0;&#xa;end&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;=Freq_CLK*Duty/100)&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b0;&#xa;&#x9;else&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b1;&#xa;end&#xa;&#xa;" Width="59" Color="#d3d3d3">
+  <Port X="-0.338983" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.0517241" Function="" Height="20" Inout="input" Parent="PWM5" Name="CLK" Width="20" Color="#faebd7"/>
+  <Port X="-0.338983" Datatype="wire" Datasize="8" Connect="" Side="left" Y="0.310345" Function="" Height="20" Inout="input" Parent="PWM5" Name="duty " Width="20" Color="#00ffff"/>
+  <Port X="0.661017" Datatype="reg" Datasize="1" Connect="" Side="right" Y="0.137931" Function="" Height="20" Inout="output" Parent="PWM5" Name="PWMOUT" Width="20" Color="#f0ffff"/>
+ </Module>
+ <Module X="761.028" Class="PWM" Comment="" Y="353.595" Parameters="" Include="" File="Current/PWM.model" Height="68" Parent="Move_CTR" Name="PWM6" Type="model" Code="parameter Freq_CLK = 50_000_000;&#xa;reg [31:0]cnt;&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;Freq_CLK)&#xa;&#x9;&#x9;cnt &lt;= cnt+1'b1;&#xa;&#x9;else&#xa;&#x9;&#x9;cnt &lt;= 32'b0;&#xa;end&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;=Freq_CLK*Duty/100)&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b0;&#xa;&#x9;else&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b1;&#xa;end&#xa;&#xa;" Width="61" Color="#d3d3d3">
+  <Port X="-0.327869" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.0882353" Function="" Height="20" Inout="input" Parent="PWM6" Name="CLK" Width="20" Color="#faebd7"/>
+  <Port X="-0.327869" Datatype="wire" Datasize="8" Connect="" Side="left" Y="0.338235" Function="" Height="20" Inout="input" Parent="PWM6" Name="duty " Width="20" Color="#00ffff"/>
+  <Port X="0.672131" Datatype="reg" Datasize="1" Connect="" Side="right" Y="0.176471" Function="" Height="20" Inout="output" Parent="PWM6" Name="PWMOUT" Width="20" Color="#f0ffff"/>
+ </Module>
+ <Module X="758.582" Class="PWM" Comment="" Y="429.304" Parameters="" Include="" File="Current/PWM.model" Height="60" Parent="Move_CTR" Name="PWM7" Type="model" Code="parameter Freq_CLK = 50_000_000;&#xa;reg [31:0]cnt;&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;Freq_CLK)&#xa;&#x9;&#x9;cnt &lt;= cnt+1'b1;&#xa;&#x9;else&#xa;&#x9;&#x9;cnt &lt;= 32'b0;&#xa;end&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;=Freq_CLK*Duty/100)&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b0;&#xa;&#x9;else&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b1;&#xa;end&#xa;&#xa;" Width="55" Color="#d3d3d3">
+  <Port X="-0.363636" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.0666667" Function="" Height="20" Inout="input" Parent="PWM7" Name="CLK" Width="20" Color="#faebd7"/>
+  <Port X="-0.363636" Datatype="wire" Datasize="8" Connect="" Side="left" Y="0.316667" Function="" Height="20" Inout="input" Parent="PWM7" Name="duty " Width="20" Color="#00ffff"/>
+  <Port X="0.636364" Datatype="reg" Datasize="1" Connect="" Side="right" Y="0.166667" Function="" Height="20" Inout="output" Parent="PWM7" Name="PWMOUT" Width="20" Color="#f0ffff"/>
+ </Module>
+ <Module X="752.543" Class="PWM" Comment="" Y="498" Parameters="" Include="" File="Current/PWM.model" Height="67" Parent="Move_CTR" Name="PWM8" Type="model" Code="parameter Freq_CLK = 50_000_000;&#xa;reg [31:0]cnt;&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;Freq_CLK)&#xa;&#x9;&#x9;cnt &lt;= cnt+1'b1;&#xa;&#x9;else&#xa;&#x9;&#x9;cnt &lt;= 32'b0;&#xa;end&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;=Freq_CLK*Duty/100)&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b0;&#xa;&#x9;else&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b1;&#xa;end&#xa;&#xa;" Width="58" Color="#d3d3d3">
+  <Port X="-0.344828" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.0746269" Function="" Height="20" Inout="input" Parent="PWM8" Name="CLK" Width="20" Color="#faebd7"/>
+  <Port X="-0.344828" Datatype="wire" Datasize="8" Connect="" Side="left" Y="0.313433" Function="" Height="20" Inout="input" Parent="PWM8" Name="duty " Width="20" Color="#00ffff"/>
+  <Port X="0.655172" Datatype="reg" Datasize="1" Connect="" Side="right" Y="0.164179" Function="" Height="20" Inout="output" Parent="PWM8" Name="PWMOUT" Width="20" Color="#f0ffff"/>
+ </Module>
+ <Module X="117.72" Class="duty_decoder" Comment="" Y="220.335" Parameters="" Include="" File="Current/duty_decoder.model" Height="300" Parent="Move_CTR" Name="duty_decoder9" Type="model" Code="always@(*)&#xa;begin&#xa;if(en==1)//使能&#xa;begin&#xa;case(state)&#xa;&#x9;&#x9;&#x9;2'b00 :begin//停止&#xa;&#x9;&#x9;&#x9;&#x9;&#x9; A1duty =0;&#x9;   B1duty = 100;  A2duty = 100;   B2duty = 0;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;   A3duty = 100;   B3duty= 0;    A4duty= 0;    B4duty = 100;   end&#xa;&#x9;&#x9;&#x9;2'b01 :begin//前进&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;   A1duty =0;&#x9;   B1duty = 100;  A2duty = 100;   B2duty = 0;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;   A3duty = 100;   B3duty= 0;    A4duty= 0;    B4duty = 100;   end&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;   &#xa;&#x9;&#x9;&#x9;2'b10 :begin //左转&#xa;&#x9;&#x9;&#x9;&#x9;&#x9; A1duty =0;&#x9;   B1duty = 100;  A2duty = 100;   B2duty = 0;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;   A3duty = 100;   B3duty= 0;    A4duty= 0;    B4duty = 100;   end&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;  &#xa;&#x9;&#x9;&#x9;2'b11:begin  //右转&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;  A1duty =0;&#x9;   B1duty = 100;  A2duty = 100;   B2duty = 0;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;   A3duty = 100;   B3duty= 0;    A4duty= 0;    B4duty = 100;   end&#xa;&#x9;&#x9;&#x9;default :begin&#xa;&#x9;&#x9;&#x9;&#x9;     A1duty =0;&#x9;   B1duty = 100;  A2duty = 100;   B2duty = 0;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;   A3duty = 100;   B3duty= 0;    A4duty= 0;    B4duty = 100;   end&#xa;endcase&#xa;end&#xa;else&#xa;begin&#xa;A1duty =0;&#x9;   B1duty = 100;  A2duty = 100;   B2duty = 0;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;   A3duty = 100;   B3duty= 0;    A4duty= 0;    B4duty = 100; &#xa;end&#xa;end" Width="377" Color="#d3d3d3">
+  <Port X="-0.0530504" Datatype="wire" Datasize="2" Connect="" Side="left" Y="0.216667" Function="" Height="20" Inout="input" Parent="duty_decoder9" Name="state" Width="20" Color="#faebd7"/>
+  <Port X="0.94695" Datatype="reg" Datasize="8" Connect="" Side="right" Y="0.0666667" Function="" Height="20" Inout="output" Parent="duty_decoder9" Name="A1duty" Width="20" Color="#00ffff"/>
+  <Port X="0.94695" Datatype="reg" Datasize="8" Connect="" Side="right" Y="0.166667" Function="" Height="20" Inout="output" Parent="duty_decoder9" Name="B1duty" Width="20" Color="#7fffd4"/>
+  <Port X="0.94695" Datatype="reg" Datasize="8" Connect="" Side="right" Y="0.266667" Function="" Height="20" Inout="output" Parent="duty_decoder9" Name="A2duty" Width="20" Color="#f0ffff"/>
+  <Port X="0.94695" Datatype="reg" Datasize="8" Connect="" Side="right" Y="0.366667" Function="" Height="20" Inout="output" Parent="duty_decoder9" Name="B2duty" Width="20" Color="#f5f5dc"/>
+  <Port X="0.94695" Datatype="reg" Datasize="8" Connect="" Side="right" Y="0.466667" Function="" Height="20" Inout="output" Parent="duty_decoder9" Name="A3duty" Width="20" Color="#ffe4c4"/>
+  <Port X="0.94695" Datatype="reg" Datasize="8" Connect="" Side="right" Y="0.566667" Function="" Height="20" Inout="output" Parent="duty_decoder9" Name="B3duty" Width="20" Color="#b8860b"/>
+  <Port X="0.94695" Datatype="reg" Datasize="8" Connect="" Side="right" Y="0.666667" Function="" Height="20" Inout="output" Parent="duty_decoder9" Name="A4duty" Width="20" Color="#ffebcd"/>
+  <Port X="0.94695" Datatype="reg" Datasize="8" Connect="" Side="right" Y="0.766667" Function="" Height="20" Inout="output" Parent="duty_decoder9" Name="B4duty" Width="20" Color="#0000ff"/>
+  <Port X="-0.0530504" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.466667" Function="" Height="20" Inout="input" Parent="duty_decoder9" Name="en" Width="20" Color="#8a2be2"/>
+ </Module>
+ <Port X="-0.0222222" Datatype="wire" Datasize="1" Side="left" Y="0.181667" Function="" Height="20" Inout="input" Parent="Move_CTR" Name="CLK" Width="20" Color="#faebd7"/>
+ <Port X="-0.0222222" Datatype="wire" Datasize="2" Side="left" Y="0.381667" Function="" Height="20" Inout="input" Parent="Move_CTR" Name="state" Width="20" Color="#00ffff"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.0816667" Function="" Height="20" Inout="output" Parent="Move_CTR" Name="PWM1A" Width="20" Color="#f0ffff"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.181667" Function="" Height="20" Inout="output" Parent="Move_CTR" Name="PWM1B" Width="20" Color="#f5f5dc"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.281667" Function="" Height="20" Inout="output" Parent="Move_CTR" Name="PWM2A" Width="20" Color="#ffe4c4"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.381667" Function="" Height="20" Inout="output" Parent="Move_CTR" Name="PWM2B" Width="20" Color="#b8860b"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.481667" Function="" Height="20" Inout="output" Parent="Move_CTR" Name="PWM3A" Width="20" Color="#ffebcd"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.581667" Function="" Height="20" Inout="output" Parent="Move_CTR" Name="PWM3B" Width="20" Color="#0000ff"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.681667" Function="" Height="20" Inout="output" Parent="Move_CTR" Name="PWM4A" Width="20" Color="#8a2be2"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.781667" Function="" Height="20" Inout="output" Parent="Move_CTR" Name="PWM4B" Width="20" Color="#a52a2a"/>
+ <Port X="-0.0222222" Datatype="wire" Datasize="1" Side="left" Y="0.581667" Function="" Height="20" Inout="input" Parent="Move_CTR" Name="en" Width="20" Color="#a52a2a"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR#PWM1>PWMOUT" To="Move_CTR>PWM1A" Parent="Move_CTR" Name="PWM1_PWMOUT"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR#PWM2>PWMOUT" To="Move_CTR>PWM1B" Parent="Move_CTR" Name="PWM2_PWMOUT"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR#PWM3>PWMOUT" To="Move_CTR>PWM2A" Parent="Move_CTR" Name="PWM3_PWMOUT"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR#PWM4>PWMOUT" To="Move_CTR>PWM2B" Parent="Move_CTR" Name="PWM4_PWMOUT"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR#PWM5>PWMOUT" To="Move_CTR>PWM3A" Parent="Move_CTR" Name="PWM5_PWMOUT"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR#PWM6>PWMOUT" To="Move_CTR>PWM3B" Parent="Move_CTR" Name="PWM6_PWMOUT"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR#PWM7>PWMOUT" To="Move_CTR>PWM4A" Parent="Move_CTR" Name="PWM7_PWMOUT"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR#PWM8>PWMOUT" To="Move_CTR>PWM4B" Parent="Move_CTR" Name="PWM8_PWMOUT"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR>CLK" To="Move_CTR#PWM1>CLK" Parent="Move_CTR" Name="Move_CTR_CLK"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR>CLK" To="Move_CTR#PWM2>CLK" Parent="Move_CTR" Name="Move_CTR_CLK"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR>CLK" To="Move_CTR#PWM3>CLK" Parent="Move_CTR" Name="Move_CTR_CLK"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR>CLK" To="Move_CTR#PWM4>CLK" Parent="Move_CTR" Name="Move_CTR_CLK"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR>CLK" To="Move_CTR#PWM5>CLK" Parent="Move_CTR" Name="Move_CTR_CLK"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR>CLK" To="Move_CTR#PWM6>CLK" Parent="Move_CTR" Name="Move_CTR_CLK"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR>CLK" To="Move_CTR#PWM7>CLK" Parent="Move_CTR" Name="Move_CTR_CLK"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR>CLK" To="Move_CTR#PWM8>CLK" Parent="Move_CTR" Name="Move_CTR_CLK"/>
+ <Wire Datatype="wire" Datasize="2" From="Move_CTR#duty_decoder9>state" To="Move_CTR>state" Parent="Move_CTR" Name="duty_decoder9_state"/>
+ <Wire Datatype="wire" Datasize="8" From="Move_CTR#duty_decoder9>A1duty" To="Move_CTR#PWM1>duty " Parent="Move_CTR" Name="duty_decoder9_A1duty"/>
+ <Wire Datatype="wire" Datasize="8" From="Move_CTR#duty_decoder9>B1duty" To="Move_CTR#PWM2>duty " Parent="Move_CTR" Name="duty_decoder9_B1duty"/>
+ <Wire Datatype="wire" Datasize="8" From="Move_CTR#duty_decoder9>A2duty" To="Move_CTR#PWM3>duty " Parent="Move_CTR" Name="duty_decoder9_A2duty"/>
+ <Wire Datatype="wire" Datasize="8" From="Move_CTR#duty_decoder9>B2duty" To="Move_CTR#PWM4>duty " Parent="Move_CTR" Name="duty_decoder9_B2duty"/>
+ <Wire Datatype="wire" Datasize="8" From="Move_CTR#duty_decoder9>A3duty" To="Move_CTR#PWM5>duty " Parent="Move_CTR" Name="duty_decoder9_A3duty"/>
+ <Wire Datatype="wire" Datasize="8" From="Move_CTR#duty_decoder9>B3duty" To="Move_CTR#PWM6>duty " Parent="Move_CTR" Name="duty_decoder9_B3duty"/>
+ <Wire Datatype="wire" Datasize="8" From="Move_CTR#duty_decoder9>A4duty" To="Move_CTR#PWM7>duty " Parent="Move_CTR" Name="duty_decoder9_A4duty"/>
+ <Wire Datatype="wire" Datasize="8" From="Move_CTR#duty_decoder9>B4duty" To="Move_CTR#PWM8>duty " Parent="Move_CTR" Name="duty_decoder9_B4duty"/>
+ <Wire Datatype="wire" Datasize="1" From="Move_CTR>en" To="Move_CTR#duty_decoder9>en" Parent="Move_CTR" Name="Move_CTR_en"/>
+</Module>

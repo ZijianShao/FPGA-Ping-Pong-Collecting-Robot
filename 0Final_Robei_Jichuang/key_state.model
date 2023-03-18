@@ -1,0 +1,7 @@
+<!DOCTYPE Robei>
+<Module X="0" Class="module" Comment="" Y="0" Parameters="" Include="" File="Current/key_state.model" Height="600" Parent="0" Name="key_state" Type="module" Code="always@(negedge key,negedge I_rst_n)&#xa;begin&#xa;&#x9;if(!I_rst_n)&#xa;begin&#xa;&#x9;state=2'd0;&#xa;&#x9;en=1'b1;&#xa;end&#x9;&#xa;&#x9;else&#xa;state=state+1;&#xa;end&#xa;&#xa;&#xa;" Width="900" Color="#d3d3d3">
+ <Port X="-0.0222222" Datatype="wire" Datasize="1" Side="left" Y="0.295" Function="" Height="20" Inout="input" Parent="key_state" Name="key" Width="20" Color="#faebd7"/>
+ <Port X="0.977778" Datatype="reg" Datasize="2" Side="right" Y="0.316667" Function="" Height="20" Inout="output" Parent="key_state" Name="state" Width="20" Color="#7fffd4"/>
+ <Port X="-0.0222222" Datatype="wire" Datasize="1" Side="left" Y="0.171667" Function="" Height="20" Inout="input" Parent="key_state" Name="I_rst_n" Width="20" Color="#f0ffff"/>
+ <Port X="0.977778" Datatype="reg" Datasize="1" Side="right" Y="0.496667" Function="" Height="20" Inout="output" Parent="key_state" Name="en" Width="20" Color="#f5f5dc"/>
+</Module>

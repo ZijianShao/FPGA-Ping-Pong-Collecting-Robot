@@ -1,0 +1,33 @@
+<!DOCTYPE Robei>
+<Module Width="900" Height="600" Name="voice" Color="#d3d3d3" Parent="0" Y="0" X="0" Type="module" File="Current/voice.model" Class="module" Code="&#xa;&#xa;&#xa;" Parameters="" Comment="" Include="">
+ <Module Width="160" Height="160" Name="key_state1" Color="#d3d3d3" Parent="voice" Y="313.694" X="179.459" Type="model" File="Current/key_state.model" Class="key_state" Code="always@(negedge key,negedge I_rst_n)&#xa;begin&#xa;&#x9;if(!I_rst_n)&#xa;begin&#xa;&#x9;state=2'd0;&#xa;&#x9;en=1'b1;&#xa;end&#x9;&#xa;&#x9;else&#xa;state=state+1;&#xa;end&#xa;&#xa;&#xa;" Parameters="" Comment="" Include="">
+  <Port Width="20" Height="20" Function="" Name="key" Color="#faebd7" Connect="" Parent="key_state1" Y="0.4375" X="-0.125" Inout="input" Datatype="wire" Datasize="1" Side="left"/>
+  <Port Width="20" Height="20" Function="" Name="state" Color="#7fffd4" Connect="" Parent="key_state1" Y="0.1875" X="0.875" Inout="output" Datatype="reg" Datasize="2" Side="right"/>
+  <Port Width="20" Height="20" Function="" Name="I_rst_n" Color="#f0ffff" Connect="" Parent="key_state1" Y="0.1875" X="-0.125" Inout="input" Datatype="wire" Datasize="1" Side="left"/>
+  <Port Width="20" Height="20" Function="" Name="en" Color="#f5f5dc" Connect="" Parent="key_state1" Y="0.4375" X="0.875" Inout="output" Datatype="reg" Datasize="1" Side="right"/>
+ </Module>
+ <Module Width="160" Height="160" Name="voice_play_cptBlock2" Color="#d3d3d3" Parent="voice" Y="182.162" X="517.297" Type="model" File="Current/voice_play_cptBlock.model" Class="voice_play_cptBlock" Code="&#xa;&#xa;&#xa;" Parameters="" Comment="" Include="">
+  <Port Width="20" Height="20" Function="" Name="I_clk" Color="#faebd7" Connect="" Parent="voice_play_cptBlock2" Y="0.1" X="-0.125" Inout="input" Datatype="wire" Datasize="1" Side="left"/>
+  <Port Width="20" Height="20" Function="" Name="I_rst_n" Color="#00ffff" Connect="" Parent="voice_play_cptBlock2" Y="0.2625" X="-0.125" Inout="input" Datatype="wire" Datasize="1" Side="left"/>
+  <Port Width="20" Height="20" Function="" Name="I_en" Color="#7fffd4" Connect="" Parent="voice_play_cptBlock2" Y="0.425" X="-0.125" Inout="input" Datatype="wire" Datasize="1" Side="left"/>
+  <Port Width="20" Height="20" Function="" Name="select" Color="#f0ffff" Connect="" Parent="voice_play_cptBlock2" Y="0.5875" X="-0.125" Inout="input" Datatype="wire" Datasize="2" Side="left"/>
+  <Port Width="20" Height="20" Function="" Name="O_scl" Color="#f5f5dc" Connect="" Parent="voice_play_cptBlock2" Y="0.1375" X="0.875" Inout="output" Datatype="wire" Datasize="1" Side="right"/>
+  <Port Width="20" Height="20" Function="" Name="O_sda_mode" Color="#b8860b" Connect="" Parent="voice_play_cptBlock2" Y="0.5375" X="0.875" Inout="output" Datatype="wire" Datasize="1" Side="right"/>
+  <Port Width="20" Height="20" Function="" Name="IO_sda" Color="#ffebcd" Connect="" Parent="voice_play_cptBlock2" Y="0.3375" X="0.875" Inout="inout" Datatype="wire" Datasize="1" Side="right"/>
+ </Module>
+ <Port Width="20" Height="20" Function="" Name="I_sck" Color="#faebd7" Parent="voice" Y="0.183333" X="-0.0222222" Inout="input" Datatype="wire" Datasize="1" Side="left"/>
+ <Port Width="20" Height="20" Function="" Name="rst_n" Color="#00ffff" Parent="voice" Y="0.383333" X="-0.0222222" Inout="input" Datatype="wire" Datasize="1" Side="left"/>
+ <Port Width="20" Height="20" Function="" Name="key" Color="#7fffd4" Parent="voice" Y="0.583333" X="-0.0222222" Inout="input" Datatype="wire" Datasize="1" Side="left"/>
+ <Port Width="20" Height="20" Function="" Name="O_scl" Color="#f0ffff" Parent="voice" Y="0.183333" X="0.977778" Inout="output" Datatype="wire" Datasize="1" Side="right"/>
+ <Port Width="20" Height="20" Function="" Name="O_sda" Color="#f5f5dc" Parent="voice" Y="0.383333" X="0.977778" Inout="inout" Datatype="wire" Datasize="1" Side="right"/>
+ <Port Width="20" Height="20" Function="" Name="O_sda_mode" Color="#ffe4c4" Parent="voice" Y="0.583333" X="0.977778" Inout="output" Datatype="wire" Datasize="1" Side="right"/>
+ <Wire Name="key_state1_en" Parent="voice" Datatype="wire" From="voice#key_state1>en" Datasize="1" To="voice#voice_play_cptBlock2>I_en"/>
+ <Wire Name="key_state1_state" Parent="voice" Datatype="wire" From="voice#key_state1>state" Datasize="2" To="voice#voice_play_cptBlock2>select"/>
+ <Wire Name="voice_play_cptBlock2_O_scl" Parent="voice" Datatype="wire" From="voice#voice_play_cptBlock2>O_scl" Datasize="1" To="voice>O_scl"/>
+ <Wire Name="voice_play_cptBlock2_IO_sda" Parent="voice" Datatype="wire" From="voice#voice_play_cptBlock2>IO_sda" Datasize="1" To="voice>O_sda"/>
+ <Wire Name="voice_I_sck" Parent="voice" Datatype="wire" From="voice>I_sck" Datasize="1" To="voice#voice_play_cptBlock2>I_clk"/>
+ <Wire Name="voice_rst_n" Parent="voice" Datatype="wire" From="voice>rst_n" Datasize="1" To="voice#voice_play_cptBlock2>I_rst_n"/>
+ <Wire Name="voice_rst_n" Parent="voice" Datatype="wire" From="voice>rst_n" Datasize="1" To="voice#key_state1>I_rst_n"/>
+ <Wire Name="voice_key" Parent="voice" Datatype="wire" From="voice>key" Datasize="1" To="voice#key_state1>key"/>
+ <Wire Name="voice_play_cptBlock2_O_sda_mode" Parent="voice" Datatype="wire" From="voice#voice_play_cptBlock2>O_sda_mode" Datasize="1" To="voice>O_sda_mode"/>
+</Module>

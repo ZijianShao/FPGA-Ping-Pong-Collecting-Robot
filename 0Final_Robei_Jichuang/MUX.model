@@ -1,0 +1,20 @@
+<!DOCTYPE Robei>
+<Module X="0" Class="module" Comment="" Y="0" Parameters="" Include="" File="Current/MUX.model" Height="890" Parent="0" Name="MUX" Type="module" Code="always@(*)&#xa;begin&#xa;&#x9;case({select1,select2,select3,select4,select5})&#xa;&#x9;5'b10000:begin&#x9;O_data=init_data;O_en=init_en;end&#xa;&#x9;5'b01000:begin&#x9;O_data=run_data;O_en=run_en;end&#xa;&#x9;5'b00100:begin&#x9;O_data=stop_data;O_en=stop_en;end&#xa;&#x9;5'b00010:begin&#x9;O_data=left_data;O_en=left_en;end&#xa;&#x9;5'b00001:begin&#x9;O_data=right_data;O_en=right_en;end&#xa;&#x9;default:;&#xa;&#x9;endcase&#xa;end&#xa;&#xa;&#xa;" Width="337" Color="#d3d3d3">
+ <Port X="-0.0593472" Datatype="wire" Datasize="1" Side="left" Y="0.0955056" Function="" Height="20" Inout="input" Parent="MUX" Name="select2" Width="20" Color="#faebd7"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="8" Side="left" Y="0.303371" Function="" Height="20" Inout="input" Parent="MUX" Name="init_data" Width="20" Color="#00ffff"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="1" Side="left" Y="0.364045" Function="" Height="20" Inout="input" Parent="MUX" Name="init_en" Width="20" Color="#7fffd4"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="8" Side="left" Y="0.425843" Function="" Height="20" Inout="input" Parent="MUX" Name="run_data" Width="20" Color="#f0ffff"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="1" Side="left" Y="0.492135" Function="" Height="20" Inout="input" Parent="MUX" Name="run_en" Width="20" Color="#f5f5dc"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="8" Side="left" Y="0.544944" Function="" Height="20" Inout="input" Parent="MUX" Name="stop_data" Width="20" Color="#ffe4c4"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="1" Side="left" Y="0.617978" Function="" Height="20" Inout="input" Parent="MUX" Name="stop_en" Width="20" Color="#b8860b"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="8" Side="left" Y="0.65618" Function="" Height="20" Inout="input" Parent="MUX" Name="left_data" Width="20" Color="#ffebcd"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="1" Side="left" Y="0.731461" Function="" Height="20" Inout="input" Parent="MUX" Name="left_en" Width="20" Color="#0000ff"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="8" Side="left" Y="0.801124" Function="" Height="20" Inout="input" Parent="MUX" Name="right_data" Width="20" Color="#8a2be2"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="1" Side="left" Y="0.850562" Function="" Height="20" Inout="input" Parent="MUX" Name="right_en" Width="20" Color="#a52a2a"/>
+ <Port X="0.940653" Datatype="reg" Datasize="8" Side="right" Y="0.173034" Function="" Height="20" Inout="output" Parent="MUX" Name="O_data" Width="20" Color="#deb887"/>
+ <Port X="0.940653" Datatype="reg" Datasize="1" Side="right" Y="0.334831" Function="" Height="20" Inout="output" Parent="MUX" Name="O_en" Width="20" Color="#5f9ea0"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="1" Side="left" Y="0.133708" Function="" Height="20" Inout="input" Parent="MUX" Name="select3" Width="20" Color="#7fff00"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="1" Side="left" Y="0.175281" Function="" Height="20" Inout="input" Parent="MUX" Name="select4" Width="20" Color="#d2691e"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="1" Side="left" Y="0.0550562" Function="" Height="20" Inout="input" Parent="MUX" Name="select1" Width="20" Color="#ff7f50"/>
+ <Port X="-0.0593472" Datatype="wire" Datasize="1" Side="left" Y="0.214607" Function="" Height="20" Inout="input" Parent="MUX" Name="select5" Width="20" Color="#6495ed"/>
+</Module>

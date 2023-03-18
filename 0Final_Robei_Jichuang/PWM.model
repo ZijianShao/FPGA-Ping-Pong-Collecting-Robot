@@ -1,0 +1,6 @@
+<!DOCTYPE Robei>
+<Module X="91.8919" Class="module" Comment="" Y="173.874" Parameters="" Include="" File="Current/PWM.model" Height="299" Parent="0" Name="PWM" Type="module" Code="parameter Freq_CLK = 1_000;&#xa;reg [31:0]cnt;&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;Freq_CLK)&#xa;&#x9;&#x9;cnt &lt;= cnt+1'b1;&#xa;&#x9;else&#xa;&#x9;&#x9;cnt &lt;= 32'b0;&#xa;end&#xa;always@(posedge CLK)&#xa;begin&#xa;&#x9;if(cnt&lt;=Freq_CLK*duty/100)&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b0;&#xa;&#x9;else&#xa;&#x9;&#x9;PWMOUT &lt;= 1'b1;&#xa;end&#xa;&#xa;" Width="244" Color="#d3d3d3">
+ <Port X="-0.102459" Datatype="wire" Datasize="1" Side="left" Y="0.264214" Function="" Height="20" Inout="input" Parent="PWM" Name="CLK" Width="20" Color="#faebd7"/>
+ <Port X="-0.102459" Datatype="wire" Datasize="8" Side="left" Y="0.454849" Function="" Height="20" Inout="input" Parent="PWM" Name="duty " Width="20" Color="#00ffff"/>
+ <Port X="0.897541" Datatype="reg" Datasize="1" Side="right" Y="0.337793" Function="" Height="20" Inout="output" Parent="PWM" Name="PWMOUT" Width="20" Color="#f0ffff"/>
+</Module>

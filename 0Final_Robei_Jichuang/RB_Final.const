@@ -1,0 +1,44 @@
+<!DOCTYPE Robei>
+<Module Y="0" Type="constrain" Parent="0" Comment="" Class="module" Include="" Code="&#xa;&#xa;&#xa;" X="0" Name="RB_Final" Color="#d3d3d3" Height="600" Parameters="" Width="900" File="Current/RB_Final.const">
+ <Module Y="53.2928" Type="model" Parent="RB_Final" Comment="" Class="RB_Final" Include="" Code="&#xa;&#xa;&#xa;" X="154.311" Name="RB_Final1" Color="#d3d3d3" Height="279" Parameters="" Width="313" File="Current/RB_Final.model">
+  <Port Y="0.16129" Parent="RB_Final1" Connect="" Side="left" Datatype="wire" Function="" Inout="input" X="-0.0638978" Datasize="1" Name="I_clk" Color="#faebd7" Height="20" Width="20"/>
+  <Port Y="0.358423" Parent="RB_Final1" Connect="" Side="left" Datatype="wire" Function="" Inout="input" X="-0.0638978" Datasize="1" Name="I_rst_n" Color="#00ffff" Height="20" Width="20"/>
+  <Port Y="0.555556" Parent="RB_Final1" Connect="" Side="left" Datatype="wire" Function="" Inout="input" X="-0.0638978" Datasize="1" Name="I_barrier" Color="#7fffd4" Height="20" Width="20"/>
+  <Port Y="0.046595" Parent="RB_Final1" Connect="" Side="right" Datatype="wire" Function="" Inout="output" X="0.936102" Datasize="1" Name="PWM1A" Color="#f0ffff" Height="20" Width="20"/>
+  <Port Y="0.129032" Parent="RB_Final1" Connect="" Side="right" Datatype="wire" Function="" Inout="output" X="0.936102" Datasize="1" Name="PWM1B" Color="#f5f5dc" Height="20" Width="20"/>
+  <Port Y="0.21147" Parent="RB_Final1" Connect="" Side="right" Datatype="wire" Function="" Inout="output" X="0.936102" Datasize="1" Name="PWM2A" Color="#ffe4c4" Height="20" Width="20"/>
+  <Port Y="0.293907" Parent="RB_Final1" Connect="" Side="right" Datatype="wire" Function="" Inout="output" X="0.936102" Datasize="1" Name="PWM2B" Color="#b8860b" Height="20" Width="20"/>
+  <Port Y="0.376344" Parent="RB_Final1" Connect="" Side="right" Datatype="wire" Function="" Inout="output" X="0.936102" Datasize="1" Name="PWM3A" Color="#ffebcd" Height="20" Width="20"/>
+  <Port Y="0.458781" Parent="RB_Final1" Connect="" Side="right" Datatype="wire" Function="" Inout="output" X="0.936102" Datasize="1" Name="PWM3B" Color="#0000ff" Height="20" Width="20"/>
+  <Port Y="0.541219" Parent="RB_Final1" Connect="" Side="right" Datatype="wire" Function="" Inout="output" X="0.936102" Datasize="1" Name="PWM4A" Color="#8a2be2" Height="20" Width="20"/>
+  <Port Y="0.623656" Parent="RB_Final1" Connect="" Side="right" Datatype="wire" Function="" Inout="output" X="0.936102" Datasize="1" Name="PWM4B" Color="#a52a2a" Height="20" Width="20"/>
+  <Port Y="0.706093" Parent="RB_Final1" Connect="" Side="right" Datatype="wire" Function="" Inout="output" X="0.936102" Datasize="1" Name="O_scl" Color="#deb887" Height="20" Width="20"/>
+  <Port Y="0.78853" Parent="RB_Final1" Connect="" Side="right" Datatype="wire" Function="" Inout="inout" X="0.936102" Datasize="1" Name="IO_sda" Color="#5f9ea0" Height="20" Width="20"/>
+ </Module>
+ <Port Y="0.183333" Parent="RB_Final" Side="left" Datatype="wire" Function="" Inout="input" X="-0.0222222" Datasize="1" Name="M1" Color="#faebd7" Height="20" Width="20"/>
+ <Port Y="0.383333" Parent="RB_Final" Side="left" Datatype="wire" Function="" Inout="input" X="-0.0222222" Datasize="1" Name="M16" Color="#00ffff" Height="20" Width="20"/>
+ <Port Y="0.583333" Parent="RB_Final" Side="left" Datatype="wire" Function="" Inout="input" X="-0.0222222" Datasize="1" Name="L1" Color="#7fffd4" Height="20" Width="20"/>
+ <Port Y="0.0666667" Parent="RB_Final" Side="right" Datatype="wire" Function="" Inout="output" X="0.977778" Datasize="1" Name="B4" Color="#f0ffff" Height="20" Width="20"/>
+ <Port Y="0.15" Parent="RB_Final" Side="right" Datatype="wire" Function="" Inout="output" X="0.977778" Datasize="1" Name="D3" Color="#f5f5dc" Height="20" Width="20"/>
+ <Port Y="0.233333" Parent="RB_Final" Side="right" Datatype="wire" Function="" Inout="output" X="0.977778" Datasize="1" Name="B6" Color="#ffe4c4" Height="20" Width="20"/>
+ <Port Y="0.316667" Parent="RB_Final" Side="right" Datatype="wire" Function="" Inout="output" X="0.977778" Datasize="1" Name="D6" Color="#b8860b" Height="20" Width="20"/>
+ <Port Y="0.4" Parent="RB_Final" Side="right" Datatype="wire" Function="" Inout="output" X="0.977778" Datasize="1" Name="B7" Color="#ffebcd" Height="20" Width="20"/>
+ <Port Y="0.483333" Parent="RB_Final" Side="right" Datatype="wire" Function="" Inout="output" X="0.977778" Datasize="1" Name="F8" Color="#0000ff" Height="20" Width="20"/>
+ <Port Y="0.566667" Parent="RB_Final" Side="right" Datatype="wire" Function="" Inout="output" X="0.977778" Datasize="1" Name="B8" Color="#8a2be2" Height="20" Width="20"/>
+ <Port Y="0.65" Parent="RB_Final" Side="right" Datatype="wire" Function="" Inout="output" X="0.977778" Datasize="1" Name="F7" Color="#a52a2a" Height="20" Width="20"/>
+ <Port Y="0.733333" Parent="RB_Final" Side="right" Datatype="wire" Function="" Inout="output" X="0.977778" Datasize="1" Name="K1" Color="#deb887" Height="20" Width="20"/>
+ <Port Y="0.816667" Parent="RB_Final" Side="right" Datatype="wire" Function="" Inout="inout" X="0.977778" Datasize="1" Name="K2" Color="#5f9ea0" Height="20" Width="20"/>
+ <Wire From="RB_Final>M1" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final#RB_Final1>I_clk"/>
+ <Wire From="RB_Final>M16" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final#RB_Final1>I_rst_n"/>
+ <Wire From="RB_Final>L1" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final#RB_Final1>I_barrier"/>
+ <Wire From="RB_Final#RB_Final1>IO_sda" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final>K2"/>
+ <Wire From="RB_Final#RB_Final1>O_scl" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final>K1"/>
+ <Wire From="RB_Final#RB_Final1>PWM1A" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final>B4"/>
+ <Wire From="RB_Final#RB_Final1>PWM1B" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final>D3"/>
+ <Wire From="RB_Final#RB_Final1>PWM2A" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final>B6"/>
+ <Wire From="RB_Final#RB_Final1>PWM2B" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final>D6"/>
+ <Wire From="RB_Final#RB_Final1>PWM3A" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final>B7"/>
+ <Wire From="RB_Final#RB_Final1>PWM3B" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final>F8"/>
+ <Wire From="RB_Final#RB_Final1>PWM4A" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final>B8"/>
+ <Wire From="RB_Final#RB_Final1>PWM4B" Parent="RB_Final" Datatype="wire" Datasize="1" Name="0" To="RB_Final>F7"/>
+</Module>

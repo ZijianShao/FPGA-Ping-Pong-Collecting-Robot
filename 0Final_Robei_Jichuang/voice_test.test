@@ -1,0 +1,23 @@
+<!DOCTYPE Robei>
+<Module X="0" Time_Scale="" Class="module" Comment="" Y="0" Include="" File="Current/voice_test.test" Height="600" Parent="0" Name="voice_test" Type="testbench" Code="initial&#x9;begin&#xa;I_clk=0;&#xa;I_rst_n=1;&#xa;key=1;&#xa;#1 I_rst_n=0;&#xa;#1 I_rst_n=1;&#xa;#10000&#x9;key=0;&#xa;#1&#x9;key=1;&#xa;#40000 $finish;&#xa;end&#xa;&#xa;always&#x9;begin&#xa;#1&#x9;I_clk=~I_clk;&#xa;end&#xa;assign IO_sda  =  (O_sda_mode == 1'b0) ? 1'b0: 1'bz ;&#xa;&#xa;&#xa;&#xa;" Width="900" Color="#d3d3d3">
+ <Module X="366.847" Class="voice" Comment="" Y="128.108" Parameters="" Include="" File="Current/voice.model" Height="160" Parent="voice_test" Name="voice1" Type="model" Code="&#xa;&#xa;&#xa;" Width="160" Color="#d3d3d3">
+  <Port X="-0.125" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.1375" Function="" Height="20" Inout="input" Parent="voice1" Name="I_sck" Width="20" Color="#faebd7"/>
+  <Port X="-0.125" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.3375" Function="" Height="20" Inout="input" Parent="voice1" Name="rst_n" Width="20" Color="#00ffff"/>
+  <Port X="-0.125" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.5375" Function="" Height="20" Inout="input" Parent="voice1" Name="key" Width="20" Color="#7fffd4"/>
+  <Port X="0.875" Datatype="wire" Datasize="1" Connect="" Side="right" Y="0.1375" Function="" Height="20" Inout="output" Parent="voice1" Name="O_scl" Width="20" Color="#f0ffff"/>
+  <Port X="0.875" Datatype="wire" Datasize="1" Connect="" Side="right" Y="0.3375" Function="" Height="20" Inout="inout" Parent="voice1" Name="O_sda" Width="20" Color="#f5f5dc"/>
+  <Port X="0.875" Datatype="wire" Datasize="1" Connect="" Side="right" Y="0.5375" Function="" Height="20" Inout="output" Parent="voice1" Name="O_sda_mode" Width="20" Color="#ffe4c4"/>
+ </Module>
+ <Port X="-0.0222222" Datatype="reg" Datasize="1" Side="left" Y="0.181667" Function="" Height="20" Inout="input" Parent="voice_test" Name="I_clk" Width="20" Color="#faebd7"/>
+ <Port X="-0.0222222" Datatype="reg" Datasize="1" Side="left" Y="0.381667" Function="" Height="20" Inout="input" Parent="voice_test" Name="I_rst_n" Width="20" Color="#00ffff"/>
+ <Port X="-0.0222222" Datatype="reg" Datasize="1" Side="left" Y="0.581667" Function="" Height="20" Inout="input" Parent="voice_test" Name="key" Width="20" Color="#7fffd4"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.181667" Function="" Height="20" Inout="output" Parent="voice_test" Name="O_scl" Width="20" Color="#f0ffff"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.381667" Function="" Height="20" Inout="inout" Parent="voice_test" Name="IO_sda" Width="20" Color="#f5f5dc"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.581667" Function="" Height="20" Inout="input" Parent="voice_test" Name="O_sda_mode" Width="20" Color="#ffe4c4"/>
+ <Wire Datatype="wire" Datasize="1" From="voice_test#voice1>O_scl" To="voice_test>O_scl" Parent="voice_test" Name="voice1_O_scl"/>
+ <Wire Datatype="wire" Datasize="1" From="voice_test#voice1>O_sda" To="voice_test>IO_sda" Parent="voice_test" Name="voice1_O_sda"/>
+ <Wire Datatype="wire" Datasize="1" From="voice_test#voice1>O_sda_mode" To="voice_test>O_sda_mode" Parent="voice_test" Name="voice1_O_sda_mode"/>
+ <Wire Datatype="wire" Datasize="1" From="voice_test#voice1>I_sck" To="voice_test>I_clk" Parent="voice_test" Name="voice1_I_sck"/>
+ <Wire Datatype="wire" Datasize="1" From="voice_test#voice1>rst_n" To="voice_test>I_rst_n" Parent="voice_test" Name="voice1_rst_n"/>
+ <Wire Datatype="wire" Datasize="1" From="voice_test#voice1>key" To="voice_test>key" Parent="voice_test" Name="voice1_key"/>
+</Module>

@@ -1,0 +1,21 @@
+<!DOCTYPE Robei>
+<Module X="0" Class="module" Comment="" Y="0" Parameters="" Include="" File="Current/voice.const" Height="600" Parent="0" Name="voice" Type="constrain" Code="&#xa;&#xa;&#xa;" Width="900" Color="#d3d3d3">
+ <Module X="323.604" Class="voice" Comment="" Y="174.054" Parameters="" Include="" File="Current/voice.model" Height="160" Parent="voice" Name="voice1" Type="model" Code="&#xa;&#xa;&#xa;" Width="160" Color="#d3d3d3">
+  <Port X="-0.125" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.1375" Function="" Height="20" Inout="input" Parent="voice1" Name="I_sck" Width="20" Color="#faebd7"/>
+  <Port X="-0.125" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.3375" Function="" Height="20" Inout="input" Parent="voice1" Name="rst_n" Width="20" Color="#00ffff"/>
+  <Port X="-0.125" Datatype="wire" Datasize="1" Connect="" Side="left" Y="0.5375" Function="" Height="20" Inout="input" Parent="voice1" Name="key" Width="20" Color="#7fffd4"/>
+  <Port X="0.875" Datatype="wire" Datasize="1" Connect="" Side="right" Y="0.1375" Function="" Height="20" Inout="output" Parent="voice1" Name="O_scl" Width="20" Color="#f0ffff"/>
+  <Port X="0.875" Datatype="wire" Datasize="1" Connect="" Side="right" Y="0.3375" Function="" Height="20" Inout="inout" Parent="voice1" Name="O_sda" Width="20" Color="#f5f5dc"/>
+  <Port X="0.875" Datatype="wire" Datasize="1" Connect="" Side="right" Y="0.5375" Function="" Height="20" Inout="output" Parent="voice1" Name="O_sda_mode" Width="20" Color="#ffe4c4"/>
+ </Module>
+ <Port X="-0.0222222" Datatype="wire" Datasize="1" Side="left" Y="0.183333" Function="" Height="20" Inout="input" Parent="voice" Name="M1" Width="20" Color="#faebd7"/>
+ <Port X="-0.0222222" Datatype="wire" Datasize="1" Side="left" Y="0.383333" Function="" Height="20" Inout="input" Parent="voice" Name="M16" Width="20" Color="#00ffff"/>
+ <Port X="-0.0222222" Datatype="wire" Datasize="1" Side="left" Y="0.583333" Function="" Height="20" Inout="input" Parent="voice" Name="M15" Width="20" Color="#7fffd4"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.233333" Function="" Height="20" Inout="output" Parent="voice" Name="K1" Width="20" Color="#f0ffff"/>
+ <Port X="0.977778" Datatype="wire" Datasize="1" Side="right" Y="0.483333" Function="" Height="20" Inout="inout" Parent="voice" Name="K2" Width="20" Color="#f5f5dc"/>
+ <Wire Datatype="wire" Datasize="1" From="voice>M1" To="voice#voice1>I_sck" Parent="voice" Name="0"/>
+ <Wire Datatype="wire" Datasize="1" From="voice>M16" To="voice#voice1>rst_n" Parent="voice" Name="0"/>
+ <Wire Datatype="wire" Datasize="1" From="voice>M15" To="voice#voice1>key" Parent="voice" Name="0"/>
+ <Wire Datatype="wire" Datasize="1" From="voice#voice1>O_scl" To="voice>K1" Parent="voice" Name="0"/>
+ <Wire Datatype="wire" Datasize="1" From="voice#voice1>O_sda" To="voice>K2" Parent="voice" Name="0"/>
+</Module>

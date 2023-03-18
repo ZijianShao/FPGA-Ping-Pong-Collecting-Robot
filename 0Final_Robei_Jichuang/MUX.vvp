@@ -1,0 +1,136 @@
+#! c:/iverilog-x64/bin/vvp
+:ivl_version "10.1 (stable)" "(v10_1_1)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0000000000823040 .scope module, "MUX" "MUX" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "select2"
+    .port_info 1 /INPUT 8 "init_data"
+    .port_info 2 /INPUT 1 "init_en"
+    .port_info 3 /INPUT 8 "run_data"
+    .port_info 4 /INPUT 1 "run_en"
+    .port_info 5 /INPUT 8 "stop_data"
+    .port_info 6 /INPUT 1 "stop_en"
+    .port_info 7 /INPUT 8 "left_data"
+    .port_info 8 /INPUT 1 "left_en"
+    .port_info 9 /INPUT 8 "right_data"
+    .port_info 10 /INPUT 1 "right_en"
+    .port_info 11 /OUTPUT 8 "O_data"
+    .port_info 12 /OUTPUT 1 "O_en"
+    .port_info 13 /INPUT 1 "select3"
+    .port_info 14 /INPUT 1 "select4"
+    .port_info 15 /INPUT 1 "select1"
+    .port_info 16 /INPUT 1 "select5"
+v00000000008231c0_0 .var "O_data", 7 0;
+v0000000000823260_0 .var "O_en", 0 0;
+o000000000085dc88 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v00000000008ae920_0 .net "init_data", 7 0, o000000000085dc88;  0 drivers
+o000000000085dcb8 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008ae9c0_0 .net "init_en", 0 0, o000000000085dcb8;  0 drivers
+o000000000085dce8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v00000000008aea60_0 .net "left_data", 7 0, o000000000085dce8;  0 drivers
+o000000000085dd18 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008aeb00_0 .net "left_en", 0 0, o000000000085dd18;  0 drivers
+o000000000085dd48 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v00000000008aeba0_0 .net "right_data", 7 0, o000000000085dd48;  0 drivers
+o000000000085dd78 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008aec40_0 .net "right_en", 0 0, o000000000085dd78;  0 drivers
+o000000000085dda8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v00000000008aece0_0 .net "run_data", 7 0, o000000000085dda8;  0 drivers
+o000000000085ddd8 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008aee10_0 .net "run_en", 0 0, o000000000085ddd8;  0 drivers
+o000000000085de08 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008aeeb0_0 .net "select1", 0 0, o000000000085de08;  0 drivers
+o000000000085de38 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008aef50_0 .net "select2", 0 0, o000000000085de38;  0 drivers
+o000000000085de68 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008aeff0_0 .net "select3", 0 0, o000000000085de68;  0 drivers
+o000000000085de98 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008af090_0 .net "select4", 0 0, o000000000085de98;  0 drivers
+o000000000085dec8 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008af130_0 .net "select5", 0 0, o000000000085dec8;  0 drivers
+o000000000085def8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v00000000008af360_0 .net "stop_data", 7 0, o000000000085def8;  0 drivers
+o000000000085df28 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008b0120_0 .net "stop_en", 0 0, o000000000085df28;  0 drivers
+E_0000000000859a10/0 .event edge, v00000000008aeeb0_0, v00000000008aef50_0, v00000000008aeff0_0, v00000000008af090_0;
+E_0000000000859a10/1 .event edge, v00000000008af130_0, v00000000008ae920_0, v00000000008ae9c0_0, v00000000008aece0_0;
+E_0000000000859a10/2 .event edge, v00000000008aee10_0, v00000000008af360_0, v00000000008b0120_0, v00000000008aea60_0;
+E_0000000000859a10/3 .event edge, v00000000008aeb00_0, v00000000008aeba0_0, v00000000008aec40_0;
+E_0000000000859a10 .event/or E_0000000000859a10/0, E_0000000000859a10/1, E_0000000000859a10/2, E_0000000000859a10/3;
+    .scope S_0000000000823040;
+T_0 ;
+    %wait E_0000000000859a10;
+    %load/vec4 v00000000008aeeb0_0;
+    %load/vec4 v00000000008aef50_0;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v00000000008aeff0_0;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v00000000008af090_0;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v00000000008af130_0;
+    %concat/vec4; draw_concat_vec4
+    %dup/vec4;
+    %pushi/vec4 16, 0, 5;
+    %cmp/u;
+    %jmp/1 T_0.0, 6;
+    %dup/vec4;
+    %pushi/vec4 8, 0, 5;
+    %cmp/u;
+    %jmp/1 T_0.1, 6;
+    %dup/vec4;
+    %pushi/vec4 4, 0, 5;
+    %cmp/u;
+    %jmp/1 T_0.2, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 5;
+    %cmp/u;
+    %jmp/1 T_0.3, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 5;
+    %cmp/u;
+    %jmp/1 T_0.4, 6;
+    %jmp T_0.6;
+T_0.0 ;
+    %load/vec4 v00000000008ae920_0;
+    %store/vec4 v00000000008231c0_0, 0, 8;
+    %load/vec4 v00000000008ae9c0_0;
+    %store/vec4 v0000000000823260_0, 0, 1;
+    %jmp T_0.6;
+T_0.1 ;
+    %load/vec4 v00000000008aece0_0;
+    %store/vec4 v00000000008231c0_0, 0, 8;
+    %load/vec4 v00000000008aee10_0;
+    %store/vec4 v0000000000823260_0, 0, 1;
+    %jmp T_0.6;
+T_0.2 ;
+    %load/vec4 v00000000008af360_0;
+    %store/vec4 v00000000008231c0_0, 0, 8;
+    %load/vec4 v00000000008b0120_0;
+    %store/vec4 v0000000000823260_0, 0, 1;
+    %jmp T_0.6;
+T_0.3 ;
+    %load/vec4 v00000000008aea60_0;
+    %store/vec4 v00000000008231c0_0, 0, 8;
+    %load/vec4 v00000000008aeb00_0;
+    %store/vec4 v0000000000823260_0, 0, 1;
+    %jmp T_0.6;
+T_0.4 ;
+    %load/vec4 v00000000008aeba0_0;
+    %store/vec4 v00000000008231c0_0, 0, 8;
+    %load/vec4 v00000000008aec40_0;
+    %store/vec4 v0000000000823260_0, 0, 1;
+    %jmp T_0.6;
+T_0.6 ;
+    %pop/vec4 1;
+    %jmp T_0;
+    .thread T_0, $push;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "D:/0Final_Robei_Jichuang/verilog/MUX.v";
