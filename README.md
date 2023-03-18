@@ -12,7 +12,6 @@
 
  ![小车演示](https://sciencebook.oss-cn-hangzhou.aliyuncs.com/202303120131245.gif)
 
-![image-20230220003357078](/Users/tomsmith/Desktop/featured.png)
 
 
 
