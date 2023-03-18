@@ -1,5 +1,3 @@
-# ZijianShao-FPGA-Ping-Pong-Collecting-Robot
-集创赛参赛作品
 # 基于FPGA的乒乓球捡球机器人
 
 第六届   全国大学生集成电路创新创业大赛   参赛作品
