@@ -1,0 +1,110 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+# Date created = 20:53:55  May 11, 2022
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		RB_Final_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE10F17C8
+set_global_assignment -name TOP_LEVEL_ENTITY RB_Final
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:53:55  MAY 11, 2022"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/voice_play_cptBlock.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/voice_play_control.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/RB_Final.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/PWM.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/play_zuozhuan.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/play_youzhuan.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/play_tingzhi.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/play_qianjin.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/play_init.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/MUX.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/Move_CTR.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/iic_send.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/HighLevel.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/duty_decoder.v
+set_global_assignment -name VERILOG_FILE 0Final_Robei_Jichuang/verilog/aviodLogic.v
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_M1 -to I_rst_n
+set_location_assignment PIN_E1 -to I_clk
+set_location_assignment PIN_F2 -to I_barrier
+set_location_assignment PIN_L2 -to PWM1A
+set_location_assignment PIN_T2 -to PWM2A
+set_location_assignment PIN_T5 -to PWM3A
+set_location_assignment PIN_T8 -to PWM4A
+set_location_assignment PIN_M9 -to O_scl
+set_location_assignment PIN_P9 -to IO_sda
+set_location_assignment PIN_E16 -to key[0]
+set_location_assignment PIN_M16 -to key[3]
+set_location_assignment PIN_M2 -to key[2]
+set_location_assignment PIN_E15 -to key[1]
+set_location_assignment PIN_F9 -to led[3]
+set_location_assignment PIN_E10 -to led[2]
+set_location_assignment PIN_C11 -to led[1]
+set_location_assignment PIN_D11 -to led[0]
+set_location_assignment PIN_B5 -to I_turn_left
+set_location_assignment PIN_B6 -to I_turn_right
+set_location_assignment PIN_N2 -to PWM1H
+set_location_assignment PIN_P2 -to PWM1L
+set_location_assignment PIN_T3 -to PWM2H
+set_location_assignment PIN_T4 -to PWM2L
+set_location_assignment PIN_T6 -to PWM3H
+set_location_assignment PIN_T7 -to PWM3L
+set_location_assignment PIN_T9 -to PWM4H
+set_location_assignment PIN_T10 -to PWM4L
+set_global_assignment -name CDF_FILE output_files/Chain1.cdf
+set_global_assignment -name CDF_FILE output_files/Chain2.cdf
+set_global_assignment -name CDF_FILE output_files/Chain3.cdf
+set_global_assignment -name CDF_FILE output_files/Chain5.cdf
+set_global_assignment -name CDF_FILE output_files/Chain6.cdf
+set_location_assignment PIN_T11 -to PWM5A
+set_location_assignment PIN_T12 -to PWM5H
+set_location_assignment PIN_T13 -to PWM5L
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

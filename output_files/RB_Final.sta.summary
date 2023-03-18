@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'I_clk'
+Slack : -3.623
+TNS   : -484.372
+
+Type  : Slow 1200mV 85C Model Setup 'voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en'
+Slack : -3.266
+TNS   : -26.026
+
+Type  : Slow 1200mV 85C Model Hold 'voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en'
+Slack : -1.596
+TNS   : -8.293
+
+Type  : Slow 1200mV 85C Model Hold 'I_clk'
+Slack : 0.351
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'I_clk'
+Slack : -0.850
+TNS   : -36.500
+
+Type  : Slow 1200mV 85C Model Removal 'I_clk'
+Slack : 0.766
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'I_clk'
+Slack : -3.000
+TNS   : -295.939
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en'
+Slack : 0.258
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'I_clk'
+Slack : -3.344
+TNS   : -435.181
+
+Type  : Slow 1200mV 0C Model Setup 'voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en'
+Slack : -3.225
+TNS   : -25.772
+
+Type  : Slow 1200mV 0C Model Hold 'voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en'
+Slack : -1.410
+TNS   : -7.406
+
+Type  : Slow 1200mV 0C Model Hold 'I_clk'
+Slack : 0.322
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'I_clk'
+Slack : -0.679
+TNS   : -27.478
+
+Type  : Slow 1200mV 0C Model Removal 'I_clk'
+Slack : 0.693
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'I_clk'
+Slack : -3.000
+TNS   : -295.939
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en'
+Slack : 0.050
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'I_clk'
+Slack : -1.214
+TNS   : -111.158
+
+Type  : Fast 1200mV 0C Model Setup 'voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en'
+Slack : -1.013
+TNS   : -7.877
+
+Type  : Fast 1200mV 0C Model Hold 'voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en'
+Slack : -0.760
+TNS   : -4.199
+
+Type  : Fast 1200mV 0C Model Hold 'I_clk'
+Slack : -0.048
+TNS   : -0.365
+
+Type  : Fast 1200mV 0C Model Recovery 'I_clk'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'I_clk'
+Slack : 0.336
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'I_clk'
+Slack : -3.000
+TNS   : -213.913
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en'
+Slack : 0.292
+TNS   : 0.000
+
+------------------------------------------------------------

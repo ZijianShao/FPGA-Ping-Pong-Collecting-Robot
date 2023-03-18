@@ -1,0 +1,902 @@
+Analysis & Synthesis report for RB_Final
+Mon May 30 19:18:55 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_jump_state
+  9. State Machine - |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: aviodLogic:aviodLogic1
+ 16. Parameter Settings for User Entity Instance: Move_CTR:Move_CTR2|PWM:PWM1
+ 17. Parameter Settings for User Entity Instance: Move_CTR:Move_CTR2|PWM:PWM2
+ 18. Parameter Settings for User Entity Instance: Move_CTR:Move_CTR2|PWM:PWM3
+ 19. Parameter Settings for User Entity Instance: Move_CTR:Move_CTR2|PWM:PWM4
+ 20. Parameter Settings for User Entity Instance: Move_CTR:Move_CTR2|PWM:PWM5
+ 21. Parameter Settings for User Entity Instance: voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1
+ 22. Port Connectivity Checks: "voice_play_cptBlock:voice_play_cptBlock3"
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                          ;
++------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon May 30 19:18:55 2022            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; RB_Final                                         ;
+; Top-level Entity Name              ; RB_Final                                         ;
+; Family                             ; Cyclone IV E                                     ;
+; Total logic elements               ; 365                                              ;
+;     Total combinational functions  ; 359                                              ;
+;     Dedicated logic registers      ; 197                                              ;
+; Total registers                    ; 197                                              ;
+; Total pins                         ; 30                                               ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 0                                                ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
++------------------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE10F17C8       ;                    ;
+; Top-level entity name                                                      ; RB_Final           ; RB_Final           ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
++-----------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                    ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                        ; Library ;
++-----------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; 0Final_Robei_Jichuang/verilog/voice_play_cptBlock.v ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/voice_play_cptBlock.v ;         ;
+; 0Final_Robei_Jichuang/verilog/voice_play_control.v  ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/voice_play_control.v  ;         ;
+; 0Final_Robei_Jichuang/verilog/RB_Final.v            ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/RB_Final.v            ;         ;
+; 0Final_Robei_Jichuang/verilog/PWM.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/PWM.v                 ;         ;
+; 0Final_Robei_Jichuang/verilog/play_zuozhuan.v       ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/play_zuozhuan.v       ;         ;
+; 0Final_Robei_Jichuang/verilog/play_youzhuan.v       ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/play_youzhuan.v       ;         ;
+; 0Final_Robei_Jichuang/verilog/play_tingzhi.v        ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/play_tingzhi.v        ;         ;
+; 0Final_Robei_Jichuang/verilog/play_qianjin.v        ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/play_qianjin.v        ;         ;
+; 0Final_Robei_Jichuang/verilog/play_init.v           ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/play_init.v           ;         ;
+; 0Final_Robei_Jichuang/verilog/MUX.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/MUX.v                 ;         ;
+; 0Final_Robei_Jichuang/verilog/Move_CTR.v            ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/Move_CTR.v            ;         ;
+; 0Final_Robei_Jichuang/verilog/iic_send.v            ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/iic_send.v            ;         ;
+; 0Final_Robei_Jichuang/verilog/HighLevel.v           ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/HighLevel.v           ;         ;
+; 0Final_Robei_Jichuang/verilog/duty_decoder.v        ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/duty_decoder.v        ;         ;
+; 0Final_Robei_Jichuang/verilog/aviodLogic.v          ; yes             ; User Verilog HDL File  ; C:/Users/Lenovo/Desktop/jcs/q13/0Final_Robei_Jichuang/verilog/aviodLogic.v          ;         ;
++-----------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 365         ;
+;                                             ;             ;
+; Total combinational functions               ; 359         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 184         ;
+;     -- 3 input functions                    ; 45          ;
+;     -- <=2 input functions                  ; 130         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 282         ;
+;     -- arithmetic mode                      ; 77          ;
+;                                             ;             ;
+; Total registers                             ; 197         ;
+;     -- Dedicated logic registers            ; 197         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 30          ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; I_clk~input ;
+; Maximum fan-out                             ; 197         ;
+; Total fan-out                               ; 1810        ;
+; Average fan-out                             ; 2.93        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
++------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                       ; Library Name ;
++------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+--------------+
+; |RB_Final                                      ; 359 (0)           ; 197 (0)      ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |RB_Final                                                                                 ; work         ;
+;    |Move_CTR:Move_CTR2|                        ; 51 (0)            ; 37 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|Move_CTR:Move_CTR2                                                              ; work         ;
+;       |PWM:PWM1|                               ; 47 (47)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|Move_CTR:Move_CTR2|PWM:PWM1                                                     ; work         ;
+;       |PWM:PWM2|                               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|Move_CTR:Move_CTR2|PWM:PWM2                                                     ; work         ;
+;       |PWM:PWM3|                               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|Move_CTR:Move_CTR2|PWM:PWM3                                                     ; work         ;
+;       |PWM:PWM4|                               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|Move_CTR:Move_CTR2|PWM:PWM4                                                     ; work         ;
+;       |PWM:PWM5|                               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|Move_CTR:Move_CTR2|PWM:PWM5                                                     ; work         ;
+;       |duty_decoder:duty_decoder9|             ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|Move_CTR:Move_CTR2|duty_decoder:duty_decoder9                                   ; work         ;
+;    |aviodLogic:aviodLogic1|                    ; 55 (55)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|aviodLogic:aviodLogic1                                                          ; work         ;
+;    |voice_play_cptBlock:voice_play_cptBlock3|  ; 253 (0)           ; 124 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3                                        ; work         ;
+;       |MUX:MUX8|                               ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8                               ; work         ;
+;       |iic_send:iic_send1|                     ; 97 (97)           ; 45 (45)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1                     ; work         ;
+;       |play_init:play_init2|                   ; 17 (17)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|play_init:play_init2                   ; work         ;
+;       |play_qianjin:play_qianjin3|             ; 18 (18)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|play_qianjin:play_qianjin3             ; work         ;
+;       |play_tingzhi:play_tingzhi4|             ; 18 (18)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|play_tingzhi:play_tingzhi4             ; work         ;
+;       |play_youzhuan:play_youzhuan5|           ; 18 (18)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|play_youzhuan:play_youzhuan5           ; work         ;
+;       |play_zuozhuan:play_zuozhuan6|           ; 18 (18)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|play_zuozhuan:play_zuozhuan6           ; work         ;
+;       |voice_play_control:voice_play_control7| ; 24 (24)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7 ; work         ;
++------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------+
+; State Machine - |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_jump_state ;
++-------------------+-------------------+-------------------+----------------------------------------+
+; Name              ; R_jump_state.0000 ; R_jump_state.1000 ; R_jump_state.0011                      ;
++-------------------+-------------------+-------------------+----------------------------------------+
+; R_jump_state.0000 ; 0                 ; 0                 ; 0                                      ;
+; R_jump_state.0011 ; 1                 ; 0                 ; 1                                      ;
+; R_jump_state.1000 ; 1                 ; 1                 ; 0                                      ;
++-------------------+-------------------+-------------------+----------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_state                                                                      ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; Name         ; R_state.1001 ; R_state.1000 ; R_state.0111 ; R_state.0110 ; R_state.0101 ; R_state.0100 ; R_state.0011 ; R_state.0010 ; R_state.0001 ; R_state.0000 ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; R_state.0000 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; R_state.0001 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 1            ;
+; R_state.0010 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 1            ;
+; R_state.0011 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 1            ;
+; R_state.0100 ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 1            ;
+; R_state.0101 ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; R_state.0110 ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; R_state.0111 ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; R_state.1000 ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; R_state.1001 ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                              ;
++-------------------------------------------------------------+-----------------------------------------------------------+------------------------+
+; Latch Name                                                  ; Latch Enable Signal                                       ; Free of Timing Hazards ;
++-------------------------------------------------------------+-----------------------------------------------------------+------------------------+
+; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_en      ; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|WideOr0 ; yes                    ;
+; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[5] ; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|WideOr0 ; yes                    ;
+; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[6] ; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|WideOr0 ; yes                    ;
+; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[7] ; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|WideOr0 ; yes                    ;
+; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[4] ; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|WideOr0 ; yes                    ;
+; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[1] ; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|WideOr0 ; yes                    ;
+; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[2] ; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|WideOr0 ; yes                    ;
+; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[3] ; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|WideOr0 ; yes                    ;
+; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[0] ; voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|WideOr0 ; yes                    ;
+; Number of user-specified and inferred latches = 9           ;                                                           ;                        ;
++-------------------------------------------------------------+-----------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                  ;
++-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+; Register name                                                                       ; Reason for Removal                                                                            ;
++-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+; aviodLogic:aviodLogic1|Logic_state2[1..3]                                           ; Stuck at GND due to stuck port data_in                                                        ;
+; aviodLogic:aviodLogic1|Tim_rst_n                                                    ; Stuck at VCC due to stuck port data_in                                                        ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_init:play_init2|O_data[6]             ; Merged with voice_play_cptBlock:voice_play_cptBlock3|play_init:play_init2|O_data[3]           ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[0]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[0]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[0]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[0]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[0]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[0]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[0]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[0]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[1]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[1]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[1]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[1]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[1]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[1]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[1]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[1]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[2]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[2]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[2]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[2]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[2]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[2]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[2]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[2]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[3]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[3]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[3]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[3]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[3]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[3]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[3]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[3]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[4]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[4]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[4]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[4]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[4]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[4]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[4]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[4]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[5]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[5]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[5]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[5]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[5]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[5]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[5]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[5]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[6]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[6]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[6]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[6]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[6]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[6]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[6]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[6]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[7]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[7]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[7]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[7]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[7]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[7]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[7]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[7]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[8]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[8]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[8]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[8]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[8]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[8]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[8]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[8]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[9]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[9]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[9]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[9]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[9]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[9]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[9]                                                  ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[9]                                                ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[10]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[10]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[10]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[10]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[10]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[10]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[10]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[10]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[11]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[11]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[11]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[11]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[11]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[11]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[11]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[11]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[12]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[12]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[12]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[12]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[12]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[12]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[12]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[12]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[13]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[13]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[13]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[13]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[13]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[13]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[13]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[13]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[14]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[14]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[14]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[14]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[14]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[14]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[14]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[14]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[15]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[15]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[15]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[15]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[15]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[15]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[15]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[15]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[16]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[16]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[16]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[16]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[16]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[16]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[16]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[16]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[17]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[17]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[17]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[17]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[17]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[17]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[17]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[17]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[18]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[18]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[18]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[18]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[18]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[18]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[18]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[18]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[19]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[19]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[19]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[19]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[19]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[19]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[19]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[19]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[20]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[20]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[20]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[20]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[20]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[20]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[20]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[20]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[21]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[21]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[21]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[21]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[21]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[21]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[21]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[21]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[22]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[22]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[22]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[22]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[22]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[22]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[22]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[22]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[23]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[23]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[23]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[23]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[23]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[23]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[23]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[23]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[24]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[24]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[24]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[24]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[24]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[24]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[24]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[24]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[25]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[25]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[25]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[25]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[25]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[25]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[25]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[25]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[26]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[26]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[26]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[26]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[26]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[26]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[26]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[26]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[27]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[27]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[27]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[27]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[27]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[27]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[27]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[27]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[28]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[28]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[28]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[28]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[28]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[28]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[28]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[28]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[29]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[29]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[29]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[29]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[29]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[29]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[29]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[29]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[30]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[30]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[30]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[30]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[30]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[30]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[30]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[30]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM2|cnt[31]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[31]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM3|cnt[31]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[31]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM4|cnt[31]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[31]                                               ;
+; Move_CTR:Move_CTR2|PWM:PWM5|cnt[31]                                                 ; Merged with Move_CTR:Move_CTR2|PWM:PWM1|cnt[31]                                               ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_zuozhuan:play_zuozhuan6|O_iic_send_en ; Merged with voice_play_cptBlock:voice_play_cptBlock3|play_zuozhuan:play_zuozhuan6|O_Byte_done ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_youzhuan:play_youzhuan5|O_iic_send_en ; Merged with voice_play_cptBlock:voice_play_cptBlock3|play_youzhuan:play_youzhuan5|O_Byte_done ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_tingzhi:play_tingzhi4|O_iic_send_en   ; Merged with voice_play_cptBlock:voice_play_cptBlock3|play_tingzhi:play_tingzhi4|O_Byte_done   ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_qianjin:play_qianjin3|O_iic_send_en   ; Merged with voice_play_cptBlock:voice_play_cptBlock3|play_qianjin:play_qianjin3|O_Byte_done   ;
+; voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_jump_state~5          ; Lost fanout                                                                                   ;
+; voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_jump_state~6          ; Lost fanout                                                                                   ;
+; voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_state~17              ; Lost fanout                                                                                   ;
+; voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_state~18              ; Lost fanout                                                                                   ;
+; voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_state~19              ; Lost fanout                                                                                   ;
+; voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_state~20              ; Lost fanout                                                                                   ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_init:play_init2|O_iic_send_en         ; Merged with voice_play_cptBlock:voice_play_cptBlock3|play_init:play_init2|O_Byte_done         ;
+; voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_state.0010            ; Stuck at GND due to stuck port data_in                                                        ;
+; Total Number of Removed Registers = 145                                             ;                                                                                               ;
++-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 197   ;
+; Number of registers using Synchronous Clear  ; 60    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 109   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 73    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                          ;
++---------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                           ; Fan out ;
++---------------------------------------------------------------------------------------------+---------+
+; voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_sda_reg                       ; 6       ;
+; voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_sda_mode                      ; 2       ;
+; voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|stop_rst_n  ; 13      ;
+; voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|left_rst_n  ; 13      ;
+; voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|right_rst_n ; 13      ;
+; voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|run_rst_n   ; 13      ;
+; voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_rst_n  ; 6       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_zuozhuan:play_zuozhuan6|O_data[2]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_tingzhi:play_tingzhi4|O_data[2]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_youzhuan:play_youzhuan5|O_data[2]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_qianjin:play_qianjin3|O_data[2]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_zuozhuan:play_zuozhuan6|O_data[3]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_youzhuan:play_youzhuan5|O_data[3]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_tingzhi:play_tingzhi4|O_data[3]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_qianjin:play_qianjin3|O_data[3]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_zuozhuan:play_zuozhuan6|O_data[0]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_tingzhi:play_tingzhi4|O_data[0]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_youzhuan:play_youzhuan5|O_data[0]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_qianjin:play_qianjin3|O_data[0]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_zuozhuan:play_zuozhuan6|O_data[5]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_tingzhi:play_tingzhi4|O_data[5]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_youzhuan:play_youzhuan5|O_data[5]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_qianjin:play_qianjin3|O_data[5]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_youzhuan:play_youzhuan5|O_data[6]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_zuozhuan:play_zuozhuan6|O_data[6]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_tingzhi:play_tingzhi4|O_data[6]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_qianjin:play_qianjin3|O_data[6]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_tingzhi:play_tingzhi4|O_data[7]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_zuozhuan:play_zuozhuan6|O_data[7]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_youzhuan:play_youzhuan5|O_data[7]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_qianjin:play_qianjin3|O_data[7]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_tingzhi:play_tingzhi4|O_data[4]               ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_zuozhuan:play_zuozhuan6|O_data[4]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_youzhuan:play_youzhuan5|O_data[4]             ; 1       ;
+; voice_play_cptBlock:voice_play_cptBlock3|play_qianjin:play_qianjin3|O_data[4]               ; 1       ;
+; Total number of inverted registers = 35                                                     ;         ;
++---------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_scl_cnt[4]        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_load_data[6]      ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 42 LEs               ; 28 LEs                 ; Yes        ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|play_init:play_init2|O_data[4]         ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 70 LEs               ; 0 LEs                  ; Yes        ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|play_youzhuan:play_youzhuan5|O_data[2] ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 70 LEs               ; 0 LEs                  ; Yes        ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|play_zuozhuan:play_zuozhuan6|O_data[4] ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 63 LEs               ; 7 LEs                  ; Yes        ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|play_tingzhi:play_tingzhi4|O_data[5]   ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 56 LEs               ; 14 LEs                 ; Yes        ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|play_qianjin:play_qianjin3|O_data[5]   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_bit_cnt           ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; No         ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|Selector0                     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_state             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|Selector7                     ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 6 LEs                ; 8 LEs                  ; No         ; |RB_Final|voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1|R_state             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: aviodLogic:aviodLogic1 ;
++----------------+--------+-------------------------------------------+
+; Parameter Name ; Value  ; Type                                      ;
++----------------+--------+-------------------------------------------+
+; TIME_SET       ; 300000 ; Signed Integer                            ;
++----------------+--------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Move_CTR:Move_CTR2|PWM:PWM1 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; Freq_CLK       ; 40000 ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Move_CTR:Move_CTR2|PWM:PWM2 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; Freq_CLK       ; 40000 ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Move_CTR:Move_CTR2|PWM:PWM3 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; Freq_CLK       ; 40000 ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Move_CTR:Move_CTR2|PWM:PWM4 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; Freq_CLK       ; 40000 ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Move_CTR:Move_CTR2|PWM:PWM5 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; Freq_CLK       ; 40000 ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1 ;
++----------------+----------------------------------+------------------------------------------------------+
+; Parameter Name ; Value                            ; Type                                                 ;
++----------------+----------------------------------+------------------------------------------------------+
+; C_DIV_SELECT   ; 0001001110001000                 ; Unsigned Binary                                      ;
+; C_DIV_SELECT0  ; 00000000000000000000010011100001 ; Unsigned Binary                                      ;
+; C_DIV_SELECT1  ; 00000000000000000000100111000011 ; Unsigned Binary                                      ;
+; C_DIV_SELECT2  ; 00000000000000000000111010100101 ; Unsigned Binary                                      ;
+; C_DIV_SELECT3  ; 00000000000000000000100111000101 ; Unsigned Binary                                      ;
++----------------+----------------------------------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "voice_play_cptBlock:voice_play_cptBlock3"                                                                      ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                  ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; O_sda_mode ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Mon May 30 19:18:51 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RB_Final -c RB_Final
+Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/voice_play_cptblock.v
+    Info (12023): Found entity 1: voice_play_cptBlock
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/voice_play_control.v
+    Info (12023): Found entity 1: voice_play_control
+Warning (10275): Verilog HDL Module Instantiation warning at RB_Final.v(110): ignored dangling comma in List of Port Connections
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/rb_final.v
+    Info (12023): Found entity 1: RB_Final
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/pwm.v
+    Info (12023): Found entity 1: PWM
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/play_zuozhuan.v
+    Info (12023): Found entity 1: play_zuozhuan
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/play_youzhuan.v
+    Info (12023): Found entity 1: play_youzhuan
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/play_tingzhi.v
+    Info (12023): Found entity 1: play_tingzhi
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/play_qianjin.v
+    Info (12023): Found entity 1: play_qianjin
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/play_init.v
+    Info (12023): Found entity 1: play_init
+Warning (12090): Entity "MUX" obtained from "0Final_Robei_Jichuang/verilog/MUX.v" instead of from Quartus II megafunction library
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/mux.v
+    Info (12023): Found entity 1: MUX
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/move_ctr.v
+    Info (12023): Found entity 1: Move_CTR
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/iic_send.v
+    Info (12023): Found entity 1: iic_send
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/highlevel.v
+    Info (12023): Found entity 1: HighLevel
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/duty_decoder.v
+    Info (12023): Found entity 1: duty_decoder
+Info (12021): Found 1 design units, including 1 entities, in source file 0final_robei_jichuang/verilog/aviodlogic.v
+    Info (12023): Found entity 1: aviodLogic
+Warning (10227): Verilog HDL Port Declaration warning at RB_Final.v(66): data type declaration for "key" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RB_Final.v(31): see declaration for object "key"
+Warning (10227): Verilog HDL Port Declaration warning at RB_Final.v(67): data type declaration for "led" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RB_Final.v(55): see declaration for object "led"
+Info (12127): Elaborating entity "RB_Final" for the top level hierarchy
+Info (12128): Elaborating entity "aviodLogic" for hierarchy "aviodLogic:aviodLogic1"
+Warning (10036): Verilog HDL or VHDL warning at aviodLogic.v(26): object "Logic_state" assigned a value but never read
+Info (12128): Elaborating entity "Move_CTR" for hierarchy "Move_CTR:Move_CTR2"
+Info (12128): Elaborating entity "PWM" for hierarchy "Move_CTR:Move_CTR2|PWM:PWM1"
+Info (12128): Elaborating entity "duty_decoder" for hierarchy "Move_CTR:Move_CTR2|duty_decoder:duty_decoder9"
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "A1duty", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "A2duty", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "A3duty", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "A4duty", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "A5duty", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "PWM5H", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "PWM5L", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "PWM1H", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "PWM1L", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "PWM2H", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "PWM2L", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "PWM3H", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "PWM3L", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "PWM4H", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at duty_decoder.v(97): inferring latch(es) for variable "PWM4L", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "PWM4L" at duty_decoder.v(322)
+Info (10041): Inferred latch for "PWM4H" at duty_decoder.v(322)
+Info (10041): Inferred latch for "PWM3L" at duty_decoder.v(322)
+Info (10041): Inferred latch for "PWM3H" at duty_decoder.v(322)
+Info (10041): Inferred latch for "PWM2L" at duty_decoder.v(322)
+Info (10041): Inferred latch for "PWM2H" at duty_decoder.v(322)
+Info (10041): Inferred latch for "PWM1L" at duty_decoder.v(322)
+Info (10041): Inferred latch for "PWM1H" at duty_decoder.v(322)
+Info (10041): Inferred latch for "PWM5L" at duty_decoder.v(322)
+Info (10041): Inferred latch for "PWM5H" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A5duty[0]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A5duty[1]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A5duty[2]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A5duty[3]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A5duty[4]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A5duty[5]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A5duty[6]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A5duty[7]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A4duty[0]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A4duty[1]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A4duty[2]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A4duty[3]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A4duty[4]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A4duty[5]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A4duty[6]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A4duty[7]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A3duty[0]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A3duty[1]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A3duty[2]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A3duty[3]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A3duty[4]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A3duty[5]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A3duty[6]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A3duty[7]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A2duty[0]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A2duty[1]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A2duty[2]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A2duty[3]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A2duty[4]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A2duty[5]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A2duty[6]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A2duty[7]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A1duty[0]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A1duty[1]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A1duty[2]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A1duty[3]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A1duty[4]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A1duty[5]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A1duty[6]" at duty_decoder.v(322)
+Info (10041): Inferred latch for "A1duty[7]" at duty_decoder.v(322)
+Info (12128): Elaborating entity "voice_play_cptBlock" for hierarchy "voice_play_cptBlock:voice_play_cptBlock3"
+Info (12128): Elaborating entity "iic_send" for hierarchy "voice_play_cptBlock:voice_play_cptBlock3|iic_send:iic_send1"
+Info (12128): Elaborating entity "play_qianjin" for hierarchy "voice_play_cptBlock:voice_play_cptBlock3|play_qianjin:play_qianjin3"
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(45): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(52): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(59): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(66): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(73): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(80): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(87): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(94): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(101): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(108): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(115): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(122): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(129): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_qianjin.v(136): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "play_tingzhi" for hierarchy "voice_play_cptBlock:voice_play_cptBlock3|play_tingzhi:play_tingzhi4"
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(45): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(52): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(59): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(66): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(73): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(80): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(87): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(94): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(101): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(108): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(115): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(122): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(129): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_tingzhi.v(136): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "play_youzhuan" for hierarchy "voice_play_cptBlock:voice_play_cptBlock3|play_youzhuan:play_youzhuan5"
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(45): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(52): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(59): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(66): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(73): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(80): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(87): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(94): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(101): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(108): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(115): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(122): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(129): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(136): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_youzhuan.v(143): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "play_zuozhuan" for hierarchy "voice_play_cptBlock:voice_play_cptBlock3|play_zuozhuan:play_zuozhuan6"
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(45): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(52): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(59): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(66): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(73): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(80): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(87): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(94): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(101): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(108): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(115): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(122): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(129): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(136): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_zuozhuan.v(143): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "play_init" for hierarchy "voice_play_cptBlock:voice_play_cptBlock3|play_init:play_init2"
+Warning (10230): Verilog HDL assignment warning at play_init.v(44): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_init.v(51): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_init.v(58): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_init.v(65): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_init.v(72): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_init.v(79): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_init.v(86): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_init.v(93): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at play_init.v(100): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "voice_play_control" for hierarchy "voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7"
+Warning (10036): Verilog HDL or VHDL warning at voice_play_control.v(67): object "f" assigned a value but never read
+Warning (10241): Verilog HDL Function Declaration warning at voice_play_control.v(69): function "Reset" may return a Don't Care value because its output register may not be assigned a value in every possible path through the function
+Warning (10241): Verilog HDL Function Declaration warning at voice_play_control.v(84): function "Enable" may return a Don't Care value because its output register may not be assigned a value in every possible path through the function
+Warning (10241): Verilog HDL Function Declaration warning at voice_play_control.v(99): function "Finished" may return a Don't Care value because its output register may not be assigned a value in every possible path through the function
+Info (12128): Elaborating entity "MUX" for hierarchy "voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8"
+Info (10264): Verilog HDL Case Statement information at MUX.v(60): all case item expressions in this case statement are onehot
+Warning (10240): Verilog HDL Always Construct warning at MUX.v(60): inferring latch(es) for variable "O_data", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at MUX.v(60): inferring latch(es) for variable "O_en", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "O_en" at MUX.v(60)
+Info (10041): Inferred latch for "O_data[0]" at MUX.v(60)
+Info (10041): Inferred latch for "O_data[1]" at MUX.v(60)
+Info (10041): Inferred latch for "O_data[2]" at MUX.v(60)
+Info (10041): Inferred latch for "O_data[3]" at MUX.v(60)
+Info (10041): Inferred latch for "O_data[4]" at MUX.v(60)
+Info (10041): Inferred latch for "O_data[5]" at MUX.v(60)
+Info (10041): Inferred latch for "O_data[6]" at MUX.v(60)
+Info (10041): Inferred latch for "O_data[7]" at MUX.v(60)
+Info (12128): Elaborating entity "HighLevel" for hierarchy "HighLevel:HighLevel4"
+Warning (14026): LATCH primitive "Move_CTR:Move_CTR2|duty_decoder:duty_decoder9|PWM3L" is permanently enabled
+Warning (14026): LATCH primitive "Move_CTR:Move_CTR2|duty_decoder:duty_decoder9|PWM4H" is permanently enabled
+Warning (14026): LATCH primitive "Move_CTR:Move_CTR2|duty_decoder:duty_decoder9|PWM4L" is permanently enabled
+Warning (14026): LATCH primitive "Move_CTR:Move_CTR2|duty_decoder:duty_decoder9|PWM2L" is permanently enabled
+Warning (14026): LATCH primitive "Move_CTR:Move_CTR2|duty_decoder:duty_decoder9|PWM2H" is permanently enabled
+Warning (14026): LATCH primitive "Move_CTR:Move_CTR2|duty_decoder:duty_decoder9|PWM1L" is permanently enabled
+Warning (14026): LATCH primitive "Move_CTR:Move_CTR2|duty_decoder:duty_decoder9|PWM1H" is permanently enabled
+Warning (14026): LATCH primitive "Move_CTR:Move_CTR2|duty_decoder:duty_decoder9|PWM3H" is permanently enabled
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_en has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en
+Warning (13012): Latch voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en
+Warning (13012): Latch voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|run_en
+Warning (13012): Latch voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en
+Warning (13012): Latch voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en
+Warning (13012): Latch voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en
+Warning (13012): Latch voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en
+Warning (13012): Latch voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|run_en
+Warning (13012): Latch voice_play_cptBlock:voice_play_cptBlock3|MUX:MUX8|O_data[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal voice_play_cptBlock:voice_play_cptBlock3|voice_play_control:voice_play_control7|init_en
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "PWM5H" is stuck at VCC
+    Warning (13410): Pin "PWM5L" is stuck at GND
+    Warning (13410): Pin "led[0]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Lenovo/Desktop/jcs/q13/output_files/RB_Final.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "key[0]"
+    Warning (15610): No output dependent on input pin "key[1]"
+    Warning (15610): No output dependent on input pin "key[2]"
+    Warning (15610): No output dependent on input pin "key[3]"
+Info (21057): Implemented 397 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 20 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 367 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 129 warnings
+    Info: Peak virtual memory: 4613 megabytes
+    Info: Processing ended: Mon May 30 19:18:55 2022
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Lenovo/Desktop/jcs/q13/output_files/RB_Final.map.smsg.
+
+
